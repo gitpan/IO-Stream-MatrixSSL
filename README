@@ -1,0 +1,28 @@
+IO-Stream-MatrixSSL version 1.0.0
+
+This module is plugin for IO::Stream which allow you to use SSL (on both
+client and server streams).
+
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+
+DEPENDENCIES
+
+IO::Stream
+Crypt::MatrixSSL 1.83
+File::ShareDir
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2008, Alex Efros
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.

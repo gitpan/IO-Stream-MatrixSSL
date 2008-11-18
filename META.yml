@@ -1,0 +1,29 @@
+---
+abstract: 'Crypt::MatrixSSL plugin for IO::Stream'
+author:
+  - 'Alex Efros <powerman-asdf@ya.ru>'
+build_requires:
+  ExtUtils::MakeMaker: 6.11
+  Test::Exception: 0
+  Test::More: 0
+distribution_type: module
+generated_by: 'Module::Install version 0.77'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: IO-Stream-MatrixSSL
+no_index:
+  directory:
+    - share
+    - share
+    - inc
+    - t
+requires:
+  Crypt::MatrixSSL: 1.83
+  File::ShareDir: 0
+  IO::Stream: 0
+  version: 0
+resources:
+  license: http://dev.perl.org/licenses/
+version: 1.000000
