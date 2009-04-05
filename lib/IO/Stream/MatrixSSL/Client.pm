@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use Carp;
 
-use version; our $VERSION = qv('1.0.0');    # update POD & Changes & README
+use version; our $VERSION = qv('1.1.0');    # update POD & Changes & README
 
 # update DEPENDENCIES in POD & Makefile.PL & README
 use IO::Stream::const;
@@ -23,6 +23,9 @@ use constant trusted_CA
 sub new {
     my ($class, $opt) = @_;
     my $self = bless {
+        crt         => undef,       # filename(s) with server certificate(s)
+        key         => undef,       # filename with server private key
+        pass        => undef,       # password to decrypt private key
         trusted_CA  => trusted_CA,  # filename(s) with trusted root CA cert(s)
         cb          => undef,       # callback for validating certificate
         %{$opt},
@@ -48,9 +51,9 @@ sub new {
     $self->{_cb_t} = sub { $this->T() };
     # Initialize SSL.
     # TODO OPTIMIZATION Cache {_ssl_keys}.
-    matrixSslReadKeys($self->{_ssl_keys}, undef, undef, undef,
-        $self->{trusted_CA})
-        == 0 or croak 'matrixSslReadKeys: wrong {trusted_CA}?';
+    matrixSslReadKeys($self->{_ssl_keys}, $self->{crt}, $self->{key},
+        $self->{pass}, $self->{trusted_CA})
+        == 0 or croak 'matrixSslReadKeys: wrong {crt}, {key}, {pass} or {trusted_CA}?';
     matrixSslNewSession($self->{_ssl}, $self->{_ssl_keys},
         $self->{_ssl_session}, 0)
         == 0 or croak 'matrixSslNewSession: wrong {_ssl_session}?';

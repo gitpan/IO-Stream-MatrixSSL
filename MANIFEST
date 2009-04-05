@@ -24,6 +24,9 @@ t/cert/testca.crt
 t/cert/testca.csr
 t/cert/testca.key
 t/cert/testca.serial
+t/cert/testcln.crt
+t/cert/testcln.csr
+t/cert/testcln.key
 t/cert/testsrv.crt
 t/cert/testsrv.csr
 t/cert/testsrv.key
@@ -37,5 +40,6 @@ t/timeout-client-handshake.t
 t/timeout-client2-handshake.t
 t/timeout-server-handshake.t
 t/timeout-server2-handshake.t
+t/uc-echo-mutual.t
 t/uc-echo.t
 t/uc-google.t
