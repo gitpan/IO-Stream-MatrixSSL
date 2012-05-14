@@ -1,3 +1,4 @@
+## no critic (Capitalization)
 package IO::Stream::MatrixSSL::Client;
 
 use warnings;

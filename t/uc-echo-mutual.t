@@ -23,7 +23,8 @@ use constant ACCEPTED => 123;
 plan tests => @CheckPoint/2;
 
 
-my $srv_sock = tcp_server('127.0.0.1', 4444);
+my $srv_sock = tcp_server('127.0.0.1', 0);
+my ($srv_port) = sockaddr_in(getsockname $srv_sock);
 my $srv_w = EV::io($srv_sock, EV::READ, sub {
     if (accept my $sock, $srv_sock) {
         checkpoint(ACCEPTED);
@@ -55,7 +56,7 @@ my $srv_w = EV::io($srv_sock, EV::READ, sub {
 
 IO::Stream->new({
     host        => '127.0.0.1',
-    port        => 4444,
+    port        => $srv_port,
     cb          => \&client,
     wait_for    => IN,
     in_buf_limit=> 1024,

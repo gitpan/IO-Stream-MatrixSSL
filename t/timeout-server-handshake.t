@@ -17,10 +17,11 @@ plan tests => @CheckPoint/2;
 
 
 
-my $srv_sock = tcp_server('127.0.0.1', 4444);
+my $srv_sock = tcp_server('127.0.0.1', 0);
+my ($srv_port) = sockaddr_in(getsockname $srv_sock);
 IO::Stream->new({
     host        => '127.0.0.1',
-    port        => 4444,
+    port        => $srv_port,
     cb          => \&server,
     wait_for    => RESOLVED|CONNECTED|SENT,
     out_buf     => 'test',

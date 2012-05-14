@@ -1,10 +1,11 @@
+## no critic (Capitalization)
 package IO::Stream::MatrixSSL;
 
 use warnings;
 use strict;
 use Carp;
 
-use version; our $VERSION = qv('1.1.0');    # update POD & Changes & README
+use version; our $VERSION = qv('1.1.1');    # update POD & Changes & README
 
 # update DEPENDENCIES in POD & Makefile.PL & README
 use IO::Stream::const;
@@ -157,7 +158,7 @@ IO::Stream::MatrixSSL - Crypt::MatrixSSL plugin for IO::Stream
 
 =head1 VERSION
 
-This document describes IO::Stream::MatrixSSL version 1.1.0
+This document describes IO::Stream::MatrixSSL version 1.1.1
 
 
 =head1 SYNOPSIS

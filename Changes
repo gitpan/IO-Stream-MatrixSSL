@@ -1,5 +1,8 @@
 Revision history for IO-Stream-MatrixSSL
 
+1.1.1	Sun May 13 06:01:33 EEST 2012
+	Fix requirements and tests.
+
 1.1.0	Sat Apr 04 19:11:42 EEST 2009
 	Added support for client certificates.
 

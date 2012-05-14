@@ -1,8 +1,11 @@
 Changes
+inc/Module/AutoInstall.pm
 inc/Module/Install.pm
+inc/Module/Install/AutoInstall.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
+inc/Module/Install/Include.pm
 inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
 inc/Module/Install/Share.pm
@@ -15,6 +18,8 @@ lib/IO/Stream/MatrixSSL/Server.pm
 Makefile.PL
 MANIFEST			This list of files
 META.yml
+MYMETA.json
+MYMETA.yml
 README
 share/ca-bundle.crt
 t/.perlcriticrc
@@ -32,6 +37,7 @@ t/cert/testsrv.csr
 t/cert/testsrv.key
 t/config.pm
 t/leak.t
+t/manifest.t
 t/perlcritic.t
 t/pod-coverage.t
 t/pod.t
